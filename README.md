@@ -15,3 +15,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 ## Project Focus
 
 This project is the keystone of Stephen Grinder's Udemy course - The Complete Nextjs Developer updated in January 2024 to account for the App router etc. This is supposed to be a reddit clone and involves Auth through Github, nextui and Prisma working with SQLite DB.
+
+## Updates to course
+
+The NextAuth configuration has changed since the videos (presumably filmed slightly before January then!?!). It can infer environmental variables that have the AUTH_ prefix. Documentation is [here](https://authjs.dev/reference/nextjs).

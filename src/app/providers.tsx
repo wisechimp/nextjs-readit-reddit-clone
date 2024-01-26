@@ -3,6 +3,7 @@
 /* This ensures state (controlled by React Context) is shared with
    the NextUI components satisfactorily */
 import { NextUIProvider } from "@nextui-org/react"
+import { SessionProvider } from "next-auth/react"
 
 type ProvidersProps = {
   children: React.ReactNode
@@ -10,9 +11,9 @@ type ProvidersProps = {
 
 const Providers = ({ children }: ProvidersProps) => {
   return (
-    <NextUIProvider>
-      {children}
-    </NextUIProvider>
+    <SessionProvider>
+      <NextUIProvider>{children}</NextUIProvider>
+    </SessionProvider>
   )
 }
 
