@@ -1,3 +1,4 @@
+"use server"
 import * as auth from "@/auth"
 
 const signIn = async () => {
