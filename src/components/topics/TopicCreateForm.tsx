@@ -4,6 +4,8 @@ import { Button, Input, Popover, PopoverContent, PopoverTrigger, Textarea } from
 import * as actions from '@/actions'
 import { useFormState } from "react-dom"
 
+import FormButton from "../common/FormButton"
+
 const TopicCreateForm = () => {
   const { createTopic } = actions
   const [formState, action] = useFormState(createTopic, {
@@ -47,7 +49,7 @@ const TopicCreateForm = () => {
                   </div>
                   : null
               }
-              <Button type="submit">Submit</Button>
+              <FormButton>Submit</FormButton>
             </div>
           </form>
         </PopoverContent>
