@@ -14,8 +14,14 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Project Focus
 
-This project is the keystone of Stephen Grinder's Udemy course - The Complete Nextjs Developer updated in January 2024 to account for the App router etc. This is supposed to be a reddit clone and involves Auth through Github, nextui and Prisma working with SQLite DB.
+This project is the keystone of Stephen Grinder's Udemy course - The Complete Nextjs Developer updated in January 2024 (which was recent when I originally typed this!) to account for the App router etc. This is supposed to be a reddit clone and involves Auth through Github, nextui and Prisma working with SQLite DB.
 
 ## Updates to course
 
 The NextAuth configuration has changed since the videos (presumably filmed slightly before January then!?!). It can infer environmental variables that have the AUTH_ prefix. Documentation is [here](https://authjs.dev/reference/nextjs).
+
+## Learn More
+
+It may be a little out of date (Next move pretty fast!) but this guide to adding a deployed database and connecting it to the project was quite helpful as it's something I added to the project. In the course the project isn't deployed and simply employs Prisma locally:
+
+https://vercel.com/guides/nextjs-prisma-postgres
