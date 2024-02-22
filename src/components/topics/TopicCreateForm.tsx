@@ -5,6 +5,7 @@ import * as actions from '@/actions'
 import { useFormState } from "react-dom"
 
 import FormButton from "../common/FormButton"
+import FormErrorMessage from "../common/FormErrorMessage"
 
 const TopicCreateForm = () => {
   const { createTopic } = actions
@@ -44,9 +45,7 @@ const TopicCreateForm = () => {
               />
               {
                 _form ? 
-                  <div className="p-2 bg-pink-100 rounded-xl text-red-500">
-                    {_form?.join(', ')}
-                  </div>
+                  <FormErrorMessage errorMessage={_form} />
                   : null
               }
               <FormButton>Submit</FormButton>
