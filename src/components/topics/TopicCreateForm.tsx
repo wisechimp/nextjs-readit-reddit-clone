@@ -15,7 +15,7 @@ const TopicCreateForm = () => {
   const { name, description, _form } = formState.errors
 
   return (
-    <div>
+    <div className="mx-auto w-fit">
       <Popover placement="left">
         <PopoverTrigger>
           <Button color="primary">Create a Topic</Button>
