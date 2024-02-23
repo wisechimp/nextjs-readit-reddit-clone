@@ -4,7 +4,7 @@ import TopicsList from "@/components/topics/TopicsList";
 import { fetchTopPosts } from "@/db/queries/posts";
 import { Divider } from "@nextui-org/react";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className='grid grid-cols-4 gap-4 p-4'>
       <div className='col-span-3'>
@@ -19,3 +19,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home

@@ -24,10 +24,26 @@ const fetchPostsByTopicSlug = (slug: string): Promise<PostWithData[]> => {
     where: { topic: { slug }},
     include: {
       topic: { select: { slug: true }},
-      user: { select: { name: true }},
+      user: { select: { name: true, image: true }},
       _count: { select: { comments: true }}
     }
   })
 }
 
-export { fetchTopPosts, fetchPostsByTopicSlug }
+const fetchPostsBySearchTerm = (searchTerm: string): Promise<PostWithData[]> => {
+  return db.post.findMany({
+    where: {
+      OR: [
+        { title: { contains: searchTerm } },
+        { content: { contains: searchTerm } }
+      ]
+    },
+    include: {
+      topic: { select: { slug: true } },
+      user: { select: { name: true, image: true } },
+      _count: { select: { comments: true } }
+    }
+  })
+}
+
+export { fetchTopPosts, fetchPostsByTopicSlug, fetchPostsBySearchTerm }
