@@ -6,6 +6,8 @@ type ShowPostProps = {
 }
 
 const ShowPost = async ({ postId }: ShowPostProps) => {
+  await new Promise(resolve => setTimeout(resolve, 2500))
+
   const post = await db.post.findFirst({
     where: { id: postId }
   })

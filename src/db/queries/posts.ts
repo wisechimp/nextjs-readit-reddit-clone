@@ -1,6 +1,24 @@
 import db from "..";
 import PostWithData from "@/types/PostWithData";
 
+const fetchTopPosts = (): Promise<PostWithData[]> => {
+  return db.post.findMany({
+    orderBy: [
+      {
+        comments: {
+          _count: "desc",
+        },
+      },
+    ],
+    include: {
+      topic: { select: { slug: true } },
+      user: { select: { name: true, image: true } },
+      _count: { select: { comments: true } },
+    },
+    take: 7
+  })
+}
+
 const fetchPostsByTopicSlug = (slug: string): Promise<PostWithData[]> => {
   return db.post.findMany({
     where: { topic: { slug }},
@@ -12,4 +30,4 @@ const fetchPostsByTopicSlug = (slug: string): Promise<PostWithData[]> => {
   })
 }
 
-export default fetchPostsByTopicSlug
+export { fetchTopPosts, fetchPostsByTopicSlug }

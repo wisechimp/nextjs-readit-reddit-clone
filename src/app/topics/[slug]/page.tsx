@@ -1,6 +1,6 @@
-import PostCreateForm from "@/components/posts/PostCreateForm"
+import PostCreateForm from "@/components/posts/CreatePostForm"
 import PostsList from "@/components/posts/PostsList"
-import fetchPostsByTopicSlug from "@/db/queries/posts"
+import { fetchPostsByTopicSlug } from "@/db/queries/posts"
 
 type ShowTopicPageProps = {
   params: {
