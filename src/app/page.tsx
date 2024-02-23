@@ -1,4 +1,4 @@
-import PostLists from "@/components/posts/PostList";
+import PostsList from "@/components/posts/PostsList";
 import TopicCreateForm from "@/components/topics/TopicCreateForm";
 import TopicsList from "@/components/topics/TopicsList";
 import { Divider } from "@nextui-org/react";
@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className='grid grid-cols-4 gap-4 p-4'>
       <div className='col-span-3'>
-        <PostLists />
+        <PostsList />
       </div>
       <div className="border shadow py-3 px-2">
         <TopicCreateForm />

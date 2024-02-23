@@ -18,7 +18,6 @@ const HeaderAuth = () => {
   let authContent: React.ReactNode
   
   if (session.status === 'loading') {
-    console.log(session.status)
     authContent = null
   } else if (session.data?.user) {
     authContent = (
