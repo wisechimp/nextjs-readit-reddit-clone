@@ -1,8 +1,10 @@
 import Link from "next/link";
-import PostShow from "@/components/posts/PostShow";
+import ShowPost from "@/components/posts/ShowPost";
 import CommentList from "@/components/comments/CommentsList";
 import CommentCreateForm from "@/components/comments/CreateCommentForm";
 import paths from "@/paths";
+import { Suspense } from "react";
+import ShowPostLoading from "@/components/posts/ShowPostLoading";
 
 interface PostShowPageProps {
   params: {
@@ -15,13 +17,15 @@ export default async function PostShowPage({ params }: PostShowPageProps) {
   const { slug, postId } = params;
 
   return (
-    <div className="space-y-3">
-      <Link className="underline decoration-solid" href={paths.topicShow(slug)}>
+    <div className='space-y-3'>
+      <Link className='underline decoration-solid' href={paths.topicShow(slug)}>
         {"< "}Back to {slug}
       </Link>
-      <PostShow postId={postId} />
+      <Suspense fallback={<ShowPostLoading />}>
+        <ShowPost postId={postId} />
+      </Suspense>
       <CommentCreateForm postId={postId} startOpen />
       <CommentList postId={postId} />
     </div>
-  );
+  )
 }
