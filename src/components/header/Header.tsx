@@ -3,6 +3,7 @@ import Link from "next/link"
 import HeaderAuth from "./HeaderAuth"
 import SearchInput from "./SearchInput"
 import { Suspense } from "react"
+import ThemeSwitcher from "../common/ThemeSwitcher"
 
 const Header = () => {
 
@@ -12,6 +13,7 @@ const Header = () => {
         <Link href='/' className='font-bold'>
           READIT!
         </Link>
+        <ThemeSwitcher />
       </NavbarBrand>
       <NavbarContent justify='center'>
         <NavbarItem>
